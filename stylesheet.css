@@ -1,0 +1,9 @@
+#gridContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#gridContainer>div {
+    flex: 0 0 calc(6.25% - 10px);
+    margin: 5px;
+}
