@@ -4,6 +4,11 @@
 }
 
 #gridContainer>div {
+    /* divide 100 / number per row (10px is there for margins) */
     flex: 0 0 calc(6.25% - 10px);
     margin: 5px;
+}
+
+#gridContainer>div:hover {
+    background-color: black;
 }
