@@ -1,12 +1,18 @@
 // 16 * 16 = 256
 
-function createGrid() {
+function createGrid(gridSize = 256) {
     const container = document.getElementById("gridContainer");
 
-    for (let i = 0; i < 256; ++i) {
+    // clears existing nodes to allow for changes in grid size
+    if (container.hasChildNodes()) {
+        container.innerHTML = ''
+    }
+
+    // grid size 16 * 15 = 256
+    for (let i = 0; i < gridSize; ++i) {
         let div = document.createElement("div");
 
-        div.textContent = `TEST`;
+        div.textContent = `|  |`;
         container.appendChild(div)
     }
 }
@@ -16,9 +22,9 @@ function promptUserChangeSize() {
     const btn = document.querySelector("#changeSize");
 
     btn.addEventListener('click', () => {
-        prompt("Enter a new grid size:")
+        let newSizeNum = prompt("Enter a new grid size:");
+        createGrid(newSizeNum * newSizeNum) // number needs to be a multiple of itself
     });
-
 }
 
 // function hoverEvent()
