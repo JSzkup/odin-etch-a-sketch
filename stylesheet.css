@@ -2,6 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 960px;
+    /* height: 960px; */
 }
 
 #gridContainer>div {
@@ -12,5 +13,5 @@
 
 #gridContainer>div:hover {
     background-color: black;
-    transition: 0.1s;
+    transition: 0.15s;
 }

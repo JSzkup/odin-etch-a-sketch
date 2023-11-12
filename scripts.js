@@ -23,6 +23,12 @@ function promptUserChangeSize() {
 
     btn.addEventListener('click', () => {
         let newSizeNum = prompt("Enter a new grid size:");
+
+        if (newSizeNum > 100) {
+            while (newSizeNum > 100) {
+                newSizeNum = prompt("Enter a new grid size (Grid size must be less than 100):");
+            }
+        }
         createGrid(newSizeNum * newSizeNum) // number needs to be a multiple of itself
     });
 }
