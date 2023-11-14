@@ -12,7 +12,7 @@ function createGrid(gridSize = 256) {
     for (let i = 0; i < gridSize; ++i) {
         let div = document.createElement("div");
 
-        div.textContent = `|  |`;
+        div.textContent = ``;
         container.appendChild(div)
     }
 }

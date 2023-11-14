@@ -2,13 +2,17 @@
     display: flex;
     flex-wrap: wrap;
     width: 960px;
-    /* height: 960px; */
+    height: 800px;
+    border: 5px solid;
 }
 
 #gridContainer>div {
     /* divide 100 / number per row (10px is there for margins) */
-    flex: 0 0 calc(6.25% - 10px);
-    margin: 5px;
+    flex: 1 1 calc(6.25% - 10px);
+    margin: 1px;
+    border: 3px solid;
+    height: 10px;
+    width: 5px;
 }
 
 #gridContainer>div:hover {
