@@ -1,5 +1,3 @@
-// 16 * 16 = 256
-
 function createGrid(gridSize = 256) {
     const container = document.getElementById("gridContainer");
 
@@ -8,13 +6,48 @@ function createGrid(gridSize = 256) {
         container.innerHTML = ''
     }
 
-    // grid size 16 * 15 = 256
+    // grid size 16 * 16 = 256
     for (let i = 0; i < gridSize; ++i) {
         let div = document.createElement("div");
 
         div.textContent = ``;
         container.appendChild(div)
     }
+}
+
+function drawOnGrid() {
+    const container = document.getElementById("gridContainer");
+    const divs = container.querySelectorAll("div");
+
+    let isMouseDown = false;
+
+    // variable to check if mouse is held down
+    container.addEventListener('mousedown', () => {
+        isMouseDown = true;
+    });
+
+    // colors the div black when click is held and mouse is moved over
+    container.addEventListener('mousemove', (event) => {
+        if (isMouseDown) {
+            const targetDiv = event.target; // Get the div element being hovered over
+            if (targetDiv.nodeName === 'DIV') { // Check if the target is a div element
+                targetDiv.style.backgroundColor = 'black';
+            }
+        }
+    });
+
+    // when mouse is no longer being held down, reset the flag
+    container.addEventListener('mouseup', () => {
+        isMouseDown = false;
+    });
+
+    // color div black when clicked on
+    divs.forEach((div) => {
+        div.addEventListener('click', () => {
+            div.style.backgroundColor = 'black';
+        });
+    });
+
 }
 
 function promptUserChangeSize() {
@@ -33,11 +66,7 @@ function promptUserChangeSize() {
     });
 }
 
-// function hoverEvent()
-// on hover paint the div and keep it painted 
-// for a short time after stopping the hover
-// look at code from drum kit project
-
 
 createGrid()
+drawOnGrid()
 promptUserChangeSize()
