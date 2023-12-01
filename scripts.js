@@ -21,6 +21,13 @@ function drawOnGrid() {
 
     let isMouseDown = false;
 
+    // color div black when clicked on
+    divs.forEach((div) => {
+        div.addEventListener('click', () => {
+            div.style.backgroundColor = 'black';
+        });
+    });
+
     // variable to check if mouse is held down
     container.addEventListener('mousedown', () => {
         isMouseDown = true;
@@ -41,12 +48,7 @@ function drawOnGrid() {
         isMouseDown = false;
     });
 
-    // color div black when clicked on
-    divs.forEach((div) => {
-        div.addEventListener('click', () => {
-            div.style.backgroundColor = 'black';
-        });
-    });
+
 
 }
 
@@ -54,6 +56,7 @@ function promptUserChangeSize() {
 
     const btn = document.querySelector("#changeSize");
 
+    // button prompt to change grid size
     btn.addEventListener('click', () => {
         let newSizeNum = prompt("Enter a new grid size:");
 
